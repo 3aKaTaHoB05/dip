@@ -26,15 +26,17 @@ namespace Cursach
             restoreImport.ShowDialog();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void admin_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (Application.OpenForms["Form1"] is Form1 form)
                 form.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
     }
 }

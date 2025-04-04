@@ -55,10 +55,14 @@ namespace Cursach
             if (username.Equals("admin", StringComparison.OrdinalIgnoreCase) && password.Equals("admin", StringComparison.Ordinal))
             {
                 this.Hide();
-                admin admin = new admin();
-                admin.ShowDialog();
-                Login.Text = "admin";
-                Password.Text = "admin";
+                using (admin adminForm = new admin())
+                {
+                    adminForm.ShowDialog();
+                }
+                Login.Text = "";
+                Password.Text = "";
+                this.Show();
+                return;
             }
 
             // Проверяем соединение с базой данных
